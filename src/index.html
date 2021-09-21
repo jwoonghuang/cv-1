@@ -2,19 +2,28 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Jwoong's resume</title>
 </head>
 <body>
 <style id="style"></style>
-<span id="demo"></span>
-<div id="div">
+<div id="html"></div>
+<div id="wrapper">
+    <div id="div"></div>
+</div>
     <style>
+        *{margin: 0;padding: 0;}
+        *,*::after,*::before{
+            box-sizing: border-box;
+        }
+        #html{
+            word-break: break-all;
+        }
         #div{
             position: fixed;
-            right: 100px;
+            left: 50%;
+            transform: translateX(-50%);
             top: 100px;
         }
         #div::after{
@@ -24,6 +33,21 @@
         #div::before{
             position: absolute;
             content: '';
+        }
+        @media (max-width: 500px) {
+            #html{
+                height: 50vh;
+                overflow: auto;
+            }
+            #wrapper{
+                height: 50vh;
+            }
+            #div{
+                position: relative;
+                top: 100px;
+                left: 50%;
+                transform: translateX(-50%);
+            }}
         }
     </style>
 </div>

@@ -1,4 +1,4 @@
-let demo = document.querySelector("#demo")
+let html = document.querySelector("#html")
 let style = document.querySelector("#style")
 let word = `
 /*Hi
@@ -11,8 +11,8 @@ let word = `
 */
 #div{
     border: 1px solid red;
-    width: 400px;
-    height: 400px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     box-shadow: 0 0 3px rgba(0,0,0,0.5);
     border: none;
@@ -26,8 +26,8 @@ let word = `
 */
 #div::before{
     border: 1px solid red;
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -37,9 +37,9 @@ let word = `
 }
 #div::after{
     border: 1px solid red;
-    width: 200px;
-    height: 200px;
-    top: 200px;
+    width: 100px;
+    height: 100px;
+    top: 100px;
     left: 50%;
     transform: translateX(-50%);
     border-radius: 50%;
@@ -59,13 +59,15 @@ let step = () => {
         }else {
             word2 += word[n] ;
         }
-        demo.innerHTML = word2;
+        html.innerHTML = word2;
         style.innerHTML = word.substring(0,n);
+        window.scrollTo(0,99999);
+        html.scrollTo(0,99999)
         if (n < word.length - 1){    //如果n不是最后一个，就继续
             n += 1;
             step();
         }
-    },10);
+    },50);
 }
 step();
 
